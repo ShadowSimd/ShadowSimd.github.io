@@ -4,39 +4,99 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Planet Builder Idle</title>
+  <meta name="description" content="Tap to build planets cell by cell, train robot workers and prestige for more.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:title" content="Planet Builder Idle">
+  <meta property="og:description" content="Tap to build planets cell by cell, train robot workers and prestige for more.">
+  <meta property="og:image" content="https://shadowsimd.github.io/images/icon-512.png">
   <style>
-    :root { color-scheme: dark; }
+    :root {
+      color-scheme: dark;
+      --bg: #0B0E1A;
+      --card: #151a2b;
+      --text: #ECEAF2;
+      --muted: #A6A7B8;
+      --accent: #8B5584;
+      --accent-light: #DCA8D2;
+      --line: rgba(220, 168, 210, 0.45);
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #0B0E1A;
-      color: #E8E8F0;
+      padding: 32px 16px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(139, 85, 132, 0.18), transparent 55%),
+        var(--bg);
+      color: var(--text);
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       text-align: center;
-      padding: 16px;
-      box-sizing: border-box;
     }
-    h1 { margin: 0 0 8px; font-size: 2rem; }
-    p { margin: 0 0 24px; color: #A8A8B8; }
-    a {
-      display: inline-block;
+    main { width: 100%; max-width: 380px; }
+    .icon {
+      width: 144px;
+      height: 144px;
+      border-radius: 32px;
+      box-shadow: 0 0 48px rgba(255, 110, 80, 0.25), 0 8px 24px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.9rem; letter-spacing: 0.01em; }
+    .tagline { margin: 0 0 28px; color: var(--muted); line-height: 1.45; }
+    .buttons { display: flex; flex-direction: column; gap: 12px; }
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
       padding: 10px 20px;
-      border: 1px solid #E8A0BF;
       border-radius: 999px;
-      color: #E8A0BF;
+      font-weight: 600;
       text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
     }
-    a:hover { background: rgba(232, 160, 191, 0.1); }
+    .button svg { width: 20px; height: 20px; flex: none; fill: currentColor; }
+    .primary { background: var(--accent); color: #fff; }
+    .primary:hover { background: #9d6195; }
+    .outline { border: 1px solid var(--line); color: var(--accent-light); }
+    .outline:hover { background: rgba(220, 168, 210, 0.08); border-color: var(--accent-light); }
+    .contact {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .contact a { color: var(--accent-light); text-decoration: none; overflow-wrap: anywhere; }
+    .contact a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <main>
+    <img class="icon" src="images/icon-512.png" alt="Planet Builder Idle icon" width="144" height="144">
     <h1>Planet Builder Idle</h1>
-    <p>Tap to build planets cell by cell, train robot workers and prestige for more.</p>
-    <a href="https://play.google.com/store/apps/details?id=ca.simondery.planetbuilderidle">Get it on Google Play</a>
+    <p class="tagline">Tap to build planets cell by cell, train robot workers and prestige for more.</p>
+
+    <div class="buttons">
+      <a class="button primary" href="https://play.google.com/store/apps/details?id=ca.simondery.planetbuilderidle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
+        Get it on Google Play
+      </a>
+      <a class="button outline" href="https://discord.gg/56rw8g4PUt">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-4.4 3.3A1 1 0 0 1 3 20.5V6a2 2 0 0 1 1-2zm4 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+        Join the Discord
+      </a>
+    </div>
+
+    <p class="contact">
+      Questions or feedback?<br>
+      <a href="mailto:games.simondery@gmail.com">games.simondery@gmail.com</a>
+    </p>
   </main>
 </body>
 </html>
